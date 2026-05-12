@@ -1,0 +1,76 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-05-12 12:20:20",
+    "containerVersion": {
+        "path": "accounts/6340311575/containers/244152760/versions/1",
+        "accountId": "6340311575",
+        "containerId": "244152760",
+        "containerVersionId": "1",
+        "name": "Empty Container",
+        "container": {
+            "path": "accounts/6340311575/containers/244152760",
+            "accountId": "6340311575",
+            "containerId": "244152760",
+            "name": "AnalyticsLiv",
+            "publicId": "GTM-PBWBJZVS",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1771569412351",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6340311575/containers/244152760/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-PBWBJZVS"
+            ]
+        },
+        "builtInVariable": [
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1771569412486",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6340311575/containers/244152760/versions/1?apiLink=version"
+    }
+}

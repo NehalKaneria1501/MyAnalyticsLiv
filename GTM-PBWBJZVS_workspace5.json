@@ -1,0 +1,684 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-05-12 12:18:41",
+    "containerVersion": {
+        "path": "accounts/6340311575/containers/244152760/versions/0",
+        "accountId": "6340311575",
+        "containerId": "244152760",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6340311575/containers/244152760",
+            "accountId": "6340311575",
+            "containerId": "244152760",
+            "name": "AnalyticsLiv",
+            "publicId": "GTM-PBWBJZVS",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1771569412351",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6340311575/containers/244152760/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-PBWBJZVS"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "tagId": "125",
+                "name": "GA4 Tag",
+                "type": "googtag",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{Measurement id G-1111}}"
+                    }
+                ],
+                "fingerprint": "1774422642823",
+                "firingTriggerId": [
+                    "2147479573"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "tagId": "199",
+                "name": "Unique Event HTML",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\ndocument.addEventListener('click', function(e) {\nif(location.pathname === \"/careers\"){\n// Careers Apply \nif (e.target.closest('a[href=\"/careers#apply\"]')) {\nwindow.dataLayer.push({\nevent: \"custom\",\neventName: \"apply_now_click\",\neventAction: e.target.closest('a') ? e.target.closest('a').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\") : \"apply_now\",\njobTitle: e.target.closest('div') && e.target.closest('div').parentElement.querySelector('h3') ? e.target.closest('div').parentElement.querySelector('h3').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\") : \"\",\nsectionHeading: (e.target.closest('section#roles') && e.target.closest('section#roles').querySelector('h2')) ? e.target.closest('section#roles').querySelector('h2').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"): \"section_heading\"\n});\n}\n// View JD\nif (e.target.closest('section#roles div button:not(a button)')) { \nwindow.dataLayer.push({\nevent: \"custom\",\neventName: \"view_jd_click\", \neventAction: e.target.closest('section#roles').querySelector('div.jsx-1cfe642ddadf7a57.flex.gap-2 > button').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"), \njobTitle: e.target.closest('div') && e.target.closest('div').parentElement.querySelector('h3') ? e.target.closest('div').parentElement.querySelector('h3').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"): \"view_jd\",\nsectionHeading: (e.target.closest('section#roles') && e.target.closest('section#roles').querySelector('h2')) ? e.target.closest('section#roles').querySelector('h2').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\") : \"section_heading\"\n});\n}\n}\nif(location.pathname === \"/case-studies\"){\n// Case Study Click (Amul)\nif (e.target.closest('a[href=\"/case-studies/amul-india-attribution-case-study\"]')) {\nwindow.dataLayer.push({\nevent: \"custom\",\neventName: \"read_case_here\",\neventAction: e.target.closest('a[href=\"/case-studies/amul-india-attribution-case-study\"]').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"),\ncasestudytitle: e.target.closest('section') && e.target.closest('section').querySelector('h1') ? e.target.closest('section').querySelector('h1').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"): \"case_study\"\n});\n}\n}\nif(location.pathname === \"/services/business-strategy\"){\n// Call schedule\nif (e.target.closest('a[href=\"#contact\"]')) {\nwindow.dataLayer.push({\nevent: \"custom\",\neventName: \"strategy_call_click\",\neventAction: e.target.closest('a[href=\"#contact\"]').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"),\nsectionHeading:e.target.closest('#__next section') && e.target.closest('#__next section') ? e.target.closest('#__next section').querySelector('div h1').innerText.replace(/\\n/g, \"\").trim(): \"Strategy That Connects Boardroom to Dashboards\"\n});\n}\n}\nif(location.pathname === \"/services/data-science\"){\n// Service button\nif (e.target.closest('section.dtsabout div button')) { \nwindow.dataLayer.push({ \nevent: \"custom\", \neventName: \"our_service_click\", \neventAction: e.target.closest('section.dtsabout div button').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"), \nsectionHeading: e.target.closest('section') && e.target.closest('section').querySelector('h2.text-2xl') ? e.target.closest('section').querySelector('h2.text-2xl').innerText.trim(): \"Empowering Businesses with Data: AnalyticsLiv's Comprehensive Suite\" \n});\n}\n// case study button\nif (e.target.closest('.dtscasestudy button.font-medium')) {  \nwindow.dataLayer.push({ \nevent: \"custom\", \neventName: \"view_case_study_click\", \neventAction: \"view\", \nsectionHeading:(e.target.closest('section div') && e.target.closest('section div').querySelector('h2.tracking-widest')) ? e.target.closest('section div').querySelector('h2.tracking-widest').innerText.trim() : \"\"\n}); \n}\n}\nif(location.pathname === \"/services/custom-pipeline\"){\n//read more here\nif (e.target.closest('section.ana-services a button')) {\nwindow.dataLayer.push({ \nevent: \"custom\",\nevent_name: \"read_here_click\", \nevent_action: e.target.closest('section.ana-services a button').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"), \nsectionHeading: e.target.closest('section') && e.target.closest('section').querySelector('h2.text-xl')? e.target.closest('section').querySelector('h2.text-xl').innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"): \"\"\n});\n}\n}\nif(location.pathname === \"/\"){\n// CTA Calendly\nif (e.target.matches('button[data-gtm=\"cta_calendly\"]')) {\nwindow.dataLayer.push({\nevent: \"custom\",\neventName: \"calender_click\",\neventAction: e.target.innerText.trim().toLowerCase().replace(/\\s+/g, \"_\"),\nsectionHeading:e.target.closest('section div') && e.target.closest('section div').querySelector('h2.text-blue-900') ? e.target.closest('section div').querySelector('h2.text-blue-900').innerText.trim() : \"\"\n});\n}\n}\n});\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1774966328395",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "tagId": "209",
+                "name": "all_custom_events_GA4",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "eventAction"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{eventAction_dlv}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "pageName"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{pageName_cjs}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "sectionHeading"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{sectionHeading_dlv}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "jobTitle"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{jobTitle_dlv}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "caseStudyTitle"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{caseStudyTitle_dlv}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "formName"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{formName_dlv}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{eventName_dlv}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{Measurement id G-1111}}"
+                    }
+                ],
+                "fingerprint": "1774425586548",
+                "firingTriggerId": [
+                    "208"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "triggerId": "208",
+                "name": "custom_ce",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "custom"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1774423374465"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "123",
+                "name": "Measurement id G-1111",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-1111"
+                    }
+                ],
+                "fingerprint": "1773310629107",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "132",
+                "name": "jobTitle_cjs",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\nreturn {{Click Element}}.closest('div').parentElement.querySelector('h3').innerText.trim()\n}"
+                    }
+                ],
+                "fingerprint": "1774424694348",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "141",
+                "name": "career_form",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  return {{Form Element}}.closest('section#apply').querySelector('form').innerText\n}"
+                    }
+                ],
+                "fingerprint": "1774247526682",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "144",
+                "name": "case_study_title",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  return {{Click Element}}.closest('section').querySelector('h1').innerText.trim();\n}"
+                    }
+                ],
+                "fingerprint": "1773656011469",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "164",
+                "name": "request_audit",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  return {{Form Element}}.closest('section#contact').querySelector('form button').innerText\n}"
+                    }
+                ],
+                "fingerprint": "1773742415960",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "172",
+                "name": "contact_form",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  return {{Form Element}}.closest('section form').querySelector('button.mainbutn').innerText\n}"
+                    }
+                ],
+                "fingerprint": "1774276070940",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "176",
+                "name": "engagement_form",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  return {{Form Element}}.closest('section form').querySelector('button.tracking-wider').innerText.trim();\n}"
+                    }
+                ],
+                "fingerprint": "1774276081582",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "179",
+                "name": "download_form",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  return {{Form Element}}.closest('section form').querySelector('div.bg-slate-50').innerText\n}"
+                    }
+                ],
+                "fingerprint": "1774338187253",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "200",
+                "name": "view_jd",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  return {{Click Element}}.closest('section#roles').querySelector('div button:not(a button)').innerText.trim();\n}"
+                    }
+                ],
+                "fingerprint": "1774270460865",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "201",
+                "name": "event action",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event action"
+                    }
+                ],
+                "fingerprint": "1773907154676",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "202",
+                "name": "event_action_dlv",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event_action"
+                    }
+                ],
+                "fingerprint": "1774248229683",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "205",
+                "name": "eventName_dlv",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "eventName"
+                    }
+                ],
+                "fingerprint": "1774423008949",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "206",
+                "name": "eventAction_dlv",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "eventAction"
+                    }
+                ],
+                "fingerprint": "1774423215113",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "207",
+                "name": "pageName_cjs",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var path = {{Page Path}} || '';\n  if(path === '/') return 'home_page';\n  if(path.indexOf('/blog') > -1) return 'blog_page';\n  if(path.indexOf('/case-studies') > -1) return 'case_studies_page';\n  return path.split(\"/\").slice(1).join(\" | \").toLowerCase();\n}"
+                    }
+                ],
+                "fingerprint": "1774423298805",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "210",
+                "name": "sectionHeading_dlv",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "sectionHeading"
+                    }
+                ],
+                "fingerprint": "1774424991558",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "211",
+                "name": "jobTitle_dlv",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "jobTitle"
+                    }
+                ],
+                "fingerprint": "1774425055573",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "212",
+                "name": "caseStudyTitle_dlv",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "caseStudyTitle"
+                    }
+                ],
+                "fingerprint": "1774425128205",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "variableId": "213",
+                "name": "formName_dlv",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "formName"
+                    }
+                ],
+                "fingerprint": "1774425196351",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "CLICK_TEXT",
+                "name": "Click Text"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "FORM_ELEMENT",
+                "name": "Form Element"
+            },
+            {
+                "accountId": "6340311575",
+                "containerId": "244152760",
+                "type": "FORM_CLASSES",
+                "name": "Form Classes"
+            }
+        ],
+        "fingerprint": "1778588321805",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6340311575/containers/244152760/versions/0?apiLink=version"
+    }
+}

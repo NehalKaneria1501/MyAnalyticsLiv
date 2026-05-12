@@ -1,0 +1,130 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-05-12 12:17:22",
+    "containerVersion": {
+        "path": "accounts/6336560174/containers/242047029/versions/0",
+        "accountId": "6336560174",
+        "containerId": "242047029",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6336560174/containers/242047029",
+            "accountId": "6336560174",
+            "containerId": "242047029",
+            "name": "spring Season",
+            "publicId": "GTM-K24R5TBJ",
+            "usageContext": [
+                "ANDROID_SDK_5"
+            ],
+            "fingerprint": "1769606275660",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6336560174/containers/242047029/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-K24R5TBJ"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6336560174",
+                "containerId": "242047029",
+                "tagId": "3",
+                "name": "Google Analytics (Firebase)",
+                "type": "fm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "mergeEventParameters",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "editParamTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "editParamKey",
+                                        "value": "Category"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "editParamValue",
+                                        "value": "{{Event Name}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "action",
+                        "value": "measure"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "gtm_event"
+                    }
+                ],
+                "fingerprint": "1778587076848",
+                "firingTriggerId": [
+                    "2147479556"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6336560174",
+                "containerId": "242047029",
+                "type": "APP_ID",
+                "name": "App ID"
+            },
+            {
+                "accountId": "6336560174",
+                "containerId": "242047029",
+                "type": "APP_NAME",
+                "name": "App Name"
+            },
+            {
+                "accountId": "6336560174",
+                "containerId": "242047029",
+                "type": "APP_VERSION_CODE",
+                "name": "App Version Code"
+            },
+            {
+                "accountId": "6336560174",
+                "containerId": "242047029",
+                "type": "APP_VERSION_NAME",
+                "name": "App Version Name"
+            },
+            {
+                "accountId": "6336560174",
+                "containerId": "242047029",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            }
+        ],
+        "fingerprint": "1778588242835",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6336560174/containers/242047029/versions/0?apiLink=version"
+    }
+}

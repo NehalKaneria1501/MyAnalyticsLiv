@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fixed HTML Examples</title>
+<style>
+body{
+font-family: sans-serif; 
+margin: 20px;
+}
+section{
+border: 2px solid #eee; 
+padding: 15px; 
+margin-bottom: 25px; 
+border-radius: 8px; 
+}
+h2{ 
+border-bottom: 2px solid #ccc; 
+padding-bottom: 5px; 
+}
+button{ 
+font-size: 1rem; 
+padding: 5px 10px; 
+margin-right: 10px; 
+}
+p,div{ 
+margin-bottom: 10px; 
+}
+output, #geo-result{
+font-weight: bold; 
+color: #005a9c; 
+}
+#div-drop1, #div-drop2 {
+float: left;
+margin: 10px;
+width: 350px;
+height: 100px;
+padding: 10px;
+border: 1px solid black;
+border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<h1>All-in-One Fixed Code</h1>
+<p>Here are all your examples, fixed and separated so they work correctly.</p>
+<section>
+<h2>HTML Geolocation API</h2>
+<p>Click the button to get your coordinates.</p>
+<button onclick="getLocation()">Try It</button>
+<p id="geo-result"></p>
+</section>
+<section>
+<h2>Drag and Drop API</h2>
+<p>Drag the image and text into the rectangles:</p>        
+<div id="div-drop1"
+ondrop="dropHandler(event)" 
+ondragover="dragoverHandler(event)">
+<img id="img1" 
+src="https://via.placeholder.com/336x69.png?text=Draggable+Image" 
+draggable="true" 
+ondragstart="dragstartHandler(event)" 
+width="336" 
+height="69">
+</div>
+<div id="div-drop2" 
+ondrop="dropHandler(event)" 
+ondragover="dragoverHandler(event)">
+</div>        
+<h3 id="drag-h3" 
+draggable="true" 
+ondragstart="dragstartHandler(event)" 
+style="clear:both; padding-top: 20px;">
+Drag me!
+</h3>
+<a id="drag-link" 
+href="https://W3Schools.com" 
+draggable="true" 
+ondragstart="dragstartHandler(event)">
+Drag this link
+</a>
+</section>
+<section>
+<h2>Web Storage:localStorage</h2>
+<p>This counter remembers your clicks even after you close the browser.</p>
+<button onclick="clickCounterLS()"type="button">Click me!</button>
+<p id="ls-result">You have clicked the button 0 time(s)!</p>
+</section>
+<section>
+<h2>Web Storage: sessionStorage</h2>
+<p>This counter resets when you close the browser tab.</p>
+<button onclick="clickCounterSS()" type="button">Click me!</button>
+<p id="ss-result">You have clicked the button 0 time(s) in this session!</p>
+</section>
+<section>
+<h2>Web Worker API</h2>
+<p>Starts a counter in the background. Requires the `demo_worker.js` file.</p>
+<p>Count numbers: <output id="worker-result"></output></p>
+<button onclick="startWorker()">Start Worker</button>
+<button onclick="stopWorker()">Stop Worker</button>
+</section>
+<section>
+<h2>Server-Sent Events (SSE)</h2>
+<p>Receiving updates from the server. Requires the `demo_sse.php` file.</p>
+<div id="sse-result"></div>
+</section>
+<script>
+function getLocation(){
+const x=document.getElementById("geo-result");
+if(navigator.geolocation){
+navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+}
+else{
+x.innerHTML="Geolocation is not supported by this browser.";
+}
+}
+function geoSuccess(position) {
+const x=document.getElementById("geo-result");
+x.innerHTML="Latitude:"+position.coords.latitude+"<br>Longitude:"+position.coords.longitude;
+}
+function geoError(error) {
+const x=document.getElementById("geo-result");
+switch(error.code){
+case error.PERMISSION_DENIED:
+x.innerHTML="User denied the request for Geolocation."
+break;
+case error.POSITION_UNAVAILABLE:
+x.innerHTML="Location information is unavailable."
+break;
+case error.TIMEOUT:
+x.innerHTML="The request to get user location timed out."
+break;
+case error.UNKNOWN_ERROR:
+x.innerHTML="An unknown error occurred."
+break;
+}
+}
+function dragstartHandler(ev){
+ev.dataTransfer.setData("text",ev.target.id);
+}
+function dragoverHandler(ev){
+ev.preventDefault();
+}
+function dropHandler(ev){
+ev.preventDefault();
+const data=ev.dataTransfer.getData("text"); 
+ev.target.appendChild(document.getElementById(data)); 
+}
+function clickCounterLS(){
+const x=document.getElementById("ls-result");
+if(typeof(Storage)!=="undefined"){
+if(localStorage.clickCount){
+localStorage.clickCount=Number(localStorage.clickCount)+1;
+}
+else{
+localStorage.clickCount=1; 
+}
+x.innerHTML="You have clicked the button"+localStorage.clickCount+"time(s)!";
+} 
+else{
+x.innerHTML="Sorry, no Web storage support!";
+}
+}
+function clickCounterSS(){
+const x=document.getElementById("ss-result");
+if(typeof(Storage)!=="undefined"){
+if(sessionStorage.clickCount){
+sessionStorage.clickCount=Number(sessionStorage.clickCount)+1;
+}
+else{
+sessionStorage.clickCount=1; 
+}
+x.innerHTML="You have clicked the button"+sessionStorage.clickCount+"time(s) in this session!";
+}
+else{
+x.innerHTML="Sorry, no Web storage support!";
+}
+}
+let w;
+function startWorker(){
+const x=document.getElementById("worker-result");
+if(typeof(Worker)!=="undefined"){
+if(typeof(w)=="undefined"){
+w=new Worker("demo_worker.js");
+}
+w.onmessage=function(event){
+x.innerHTML=event.data;
+};
+}
+else{
+x.innerHTML="Sorry! No Web Worker support.";
+}
+}
+function stopWorker(){
+if (typeof(w)!=="undefined"){
+w.terminate();
+w = undefined;
+}
+}
+function startSSE(){
+const x=document.getElementById("sse-result");
+if (typeof(EventSource)!=="undefined"){
+var source=new EventSource("demo_sse.php");
+source.onmessage=function(event){
+x.innerHTML+=event.data+"<br>";
+};
+}
+ else{
+x.innerHTML="Sorry, no support for server-sent events.";
+}
+}
+startSSE();
+</script>
+</body>
+</html>

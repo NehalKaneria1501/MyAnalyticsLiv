@@ -1,0 +1,76 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-05-12 11:59:46",
+    "containerVersion": {
+        "path": "accounts/6327910377/containers/237379136/versions/1",
+        "accountId": "6327910377",
+        "containerId": "237379136",
+        "containerVersionId": "1",
+        "name": "Empty Container",
+        "container": {
+            "path": "accounts/6327910377/containers/237379136",
+            "accountId": "6327910377",
+            "containerId": "237379136",
+            "name": "MyFirstAnalytics",
+            "publicId": "GTM-NCGLG3GW",
+            "usageContext": [
+                "ANDROID_SDK_5"
+            ],
+            "fingerprint": "1765345099009",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6327910377/containers/237379136/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-NCGLG3GW"
+            ]
+        },
+        "builtInVariable": [
+            {
+                "accountId": "6327910377",
+                "containerId": "237379136",
+                "type": "APP_ID",
+                "name": "App ID"
+            },
+            {
+                "accountId": "6327910377",
+                "containerId": "237379136",
+                "type": "APP_NAME",
+                "name": "App Name"
+            },
+            {
+                "accountId": "6327910377",
+                "containerId": "237379136",
+                "type": "APP_VERSION_CODE",
+                "name": "App Version Code"
+            },
+            {
+                "accountId": "6327910377",
+                "containerId": "237379136",
+                "type": "APP_VERSION_NAME",
+                "name": "App Version Name"
+            },
+            {
+                "accountId": "6327910377",
+                "containerId": "237379136",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            }
+        ],
+        "fingerprint": "1765345099011",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6327910377/containers/237379136/versions/1?apiLink=version"
+    }
+}
